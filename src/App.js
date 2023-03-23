@@ -1,25 +1,68 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState, useEffect} from 'react';
+import BookCreate from "./components/BookCreate";
+import BookList from "./components/BookList";
+import axios from "axios";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [books, setBooks] = useState([]);
+
+    const fetchBooks = async () => {
+        const response = await axios.get('http://localhost:3001/books');
+
+        setBooks(response.data);
+    }
+
+    useEffect(() => {
+        fetchBooks();
+    }, []);
+
+    const editBookById = (id, title) => {
+        const updatedBooks = books.map((book) => {
+            if (book.id === id) {
+                return { ...book, title };
+            }
+            return book;
+        });
+
+        setBooks(updatedBooks);
+    };
+
+    const deleteBookById = (id) => {
+        const updatedBooks = books.filter((book) => {
+            return book.id !== id;
+        });
+
+        setBooks(updatedBooks);
+    };
+
+    const createBook = async (title, name) => {
+        const response = await axios.post('http://localhost:3001/books', {
+            title,
+            name
+        });
+
+        const voteResponse = await axios.post('http://localhost:3001/votes', {
+            bookId: response.data.id,
+            votes: 0
+        });
+
+
+        const updatedBook = [
+            ...books,
+            response.data
+        ];
+        setBooks(updatedBook);
+    }
+
+    return (
+        <div className="app">
+            <h1>Adj hozzá eseményt és szavazz arra, amiben szívesen részt vennél!</h1>
+            <BookList books={books} onDelete={deleteBookById} onEdit={editBookById}/>
+            <BookCreate onCreate={createBook}/>
+        </div>
+    );
 }
 
 export default App;
