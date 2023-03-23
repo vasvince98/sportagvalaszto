@@ -26,7 +26,7 @@ function BookCreate( {onCreate} ) {
                 <input className="input" value={user} onChange={handleUserChange}/>
                 <label>Sportág</label>
                 <input className="input" value={title} onChange={handleTitleChange}/>
-                <button className="button">Hozzáad!</button>
+                <button className="button">Hozzáadd!</button>
             </form>
         </div>
     );
