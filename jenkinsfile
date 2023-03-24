@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             when {
-                branch 'production'
+                expression { return env.BRANCH_NAME == 'production' }
             }
             steps {
                 echo 'Deploying....'
