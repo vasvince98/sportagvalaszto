@@ -9,6 +9,11 @@
       "title": "handball",
       "name": "szmígyesz",
       "id": 2
+    },
+    {
+      "title": "bowling",
+      "name": "Peti",
+      "id": 3
     }
   ],
   "votes": [
@@ -21,6 +26,11 @@
       "bookId": 2,
       "votes": 0,
       "id": 2
+    },
+    {
+      "bookId": 3,
+      "votes": 0,
+      "id": 3
     }
   ]
 }
