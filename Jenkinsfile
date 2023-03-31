@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'cd /var/www/html/ && npm build'
+                sh 'cd /var/www/html/ && npm run build'
             }
         }
         stage('Test') {
