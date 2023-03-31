@@ -10,18 +10,24 @@ pipeline {
 
         stage('Move file to apache root') {
             steps {
-                sh 'cp -r /var/lib/jenkins/workspace/sportagvalasztomulti_production/* /var/www/html/'
+                sh 'cp -r /var/lib/jenkins/workspace/sportagvalasztomulti_production/* /var/www/html'
             }
         }
+
+        stage('Install dependencies') {
+            steps {
+                sh 'cd /var/www/html && npm install'
+            }
+        }
+
         stage('Build') {
             steps {
                 sh 'cd /var/www/html/ && npm run build'
             }
         }
-        stage('Test') {
+        stage('Moving build to apache root') {
             steps {
-                echo 'Testing'
-                echo env.BRANCH_NAME
+                sh 'cp -r /var/www/html/build/* /var/www/html/'
             }
         }
         stage('Deploy') {
