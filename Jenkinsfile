@@ -7,9 +7,15 @@ pipeline {
                 echo 'Cloning repo'
             }
         }
+
+        stage('Move file to apache root') {
+            steps {
+                sh 'cp -r /var/lib/jenkins/workspace/sportagvalasztomulti_production /var/www/html/'
+            }
+        }
         stage('Build') {
             steps {
-                echo 'ascasc..'
+                sh 'cd /var/www/html/ && npm build'
             }
         }
         stage('Test') {
