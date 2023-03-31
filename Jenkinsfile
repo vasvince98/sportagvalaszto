@@ -2,6 +2,10 @@ pipeline {
     agent any
 
     stages {
+        stage('Clone repo') {
+            steps {
+                echo 'Cloning repo'
+            }
         stage('Build') {
             steps {
                 echo 'ascasc..'
