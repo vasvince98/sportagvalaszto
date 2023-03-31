@@ -6,6 +6,7 @@ pipeline {
             steps {
                 echo 'Cloning repo'
             }
+        }
         stage('Build') {
             steps {
                 echo 'ascasc..'
