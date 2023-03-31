@@ -58,7 +58,7 @@ function App() {
 
     return (
         <div className="app">
-            <h1>Adj hozzá eseményt és szavazz arra, amiben szívesen részt vennéll!</h1>
+            <h1>Adj hozzá eseményt és szavazz arra, amiben szívesen részt vennél!</h1>
             <BookList books={books} onDelete={deleteBookById} onEdit={editBookById}/>
             <BookCreate onCreate={createBook}/>
         </div>
