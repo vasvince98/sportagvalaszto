@@ -32,7 +32,7 @@ pipeline {
         }
         stage('Deploy') {
             when {
-                branch 'productionn'
+                branch 'production'
             }
             steps {
                 echo 'Deploying....'
