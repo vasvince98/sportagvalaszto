@@ -10,7 +10,7 @@ pipeline {
 
         stage('Grant permission') {
             steps {
-                sh 'chmod 777 /var/lib/jenkins/workspace/sportagvalasztomulti_production'
+                sh 'chmod -R 777 /var/lib/jenkins/workspace/sportagvalasztomulti_production'
             }
         }
 
