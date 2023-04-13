@@ -8,9 +8,15 @@ pipeline {
             }
         }
 
+        stage('Grant permission') {
+            steps {
+                sh 'chmod 777 /var/lib/jenkins/workspace/sportagvalasztomulti_production'
+            }
+        }
+
         stage('Move file to apache root') {
             steps {
-                sh '$echo Johanna0802 | sudo -S cp -r /var/lib/jenkins/workspace/sportagvalasztomulti_production/* /var/www/html'
+                sh 'cp -r /var/lib/jenkins/workspace/sportagvalasztomulti_production/* /var/www/html'
             }
         }
 
