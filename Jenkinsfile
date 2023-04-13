@@ -16,18 +16,18 @@ pipeline {
 
         stage('Install dependencies') {
             steps {
-                sh 'cd /var/www/html && npm install'
+                sh 'cd /var/www/html && sudo npm install'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'cd /var/www/html/ && npm run build'
+                sh 'cd /var/www/html/ && sudo npm run build'
             }
         }
         stage('Moving build to apache root') {
             steps {
-                sh 'cp -r /var/www/html/build/* /var/www/html/'
+                sh 'sudo cp -r /var/www/html/build/* /var/www/html/'
             }
         }
         stage('Deploy') {
