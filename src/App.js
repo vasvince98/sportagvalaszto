@@ -9,7 +9,7 @@ function App() {
     const [books, setBooks] = useState([]);
 
     const fetchBooks = async () => {
-        const response = await axios.get('sportagvalaszto.vasvince.com:3001/books');
+        const response = await axios.get('https://sportagvalaszto.vasvince.com:3001/books');
 
         setBooks(response.data);
     }
@@ -38,12 +38,12 @@ function App() {
     };
 
     const createBook = async (title, name) => {
-        const response = await axios.post('sportagvalaszto.vasvince.com:3001/books', {
+        const response = await axios.post('https://sportagvalaszto.vasvince.com:3001/books', {
             title,
             name
         });
 
-        const voteResponse = await axios.post('sportagvalaszto.vasvince.com:3001/votes', {
+        const voteResponse = await axios.post('https://sportagvalaszto.vasvince.com:3001/votes', {
             bookId: response.data.id,
             votes: 0
         });
