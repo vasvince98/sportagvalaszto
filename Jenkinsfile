@@ -36,6 +36,8 @@ pipeline {
             }
             steps {
                 echo 'Deploying....'
+                //Starting the json server in previous screen session
+                sh 'sudo screen -r && echo "Szia" && exit'
             }
         }
     }
