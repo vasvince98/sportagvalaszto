@@ -9,7 +9,7 @@ function App() {
     const [books, setBooks] = useState([]);
 
     const fetchBooks = async () => {
-        const response = await axios.get('https://sportagvalaszto.vasvince.com:3001/books');
+        const response = await axios.get('http://192.168.1.74:3001/books');
 
         setBooks(response.data);
     }
