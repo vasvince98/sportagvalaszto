@@ -37,7 +37,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 //Starting the json server in previous screen session
-                sh 'sudo screen -r && echo "Szia" && exit'
+                sh 'sudo screen -dmS json-server sudo json-server --watch db.json'
             }
         }
     }
