@@ -12,7 +12,7 @@ function BookShow({book, onDelete, onEdit}) {
     const [imageSrc, setImageSrc] = useState('');
 
     const fetchVotes = async () => {
-        const response = await axios.get(`http://localhost:3001/votes/${book.id}`);
+        const response = await axios.get(`https://sportagvalaszto.vasvince.com:3001/votes/${book.id}`);
         console.log(response.data);
         setVotes(response.data.votes);
     }
@@ -30,7 +30,7 @@ function BookShow({book, onDelete, onEdit}) {
     }, []);
 
     const updateVote = async (bookId, votes) => {
-        const response = await axios.put(`http://localhost:3001/votes/${bookId}`, {
+        const response = await axios.put(`https://sportagvalaszto.vasvince.com:3001/votes/${bookId}`, {
             bookId,
             votes
         });
