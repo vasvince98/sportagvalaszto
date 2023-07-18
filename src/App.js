@@ -9,12 +9,9 @@ function App() {
     const [books, setBooks] = useState([]);
 
     const fetchBooks = async () => {
-        // const response = await axios.get('https://sportagvalaszto.vasvince.com:3001/books');
-        fetch('https://jsonplaceholder.typicode.com/todos/1')
-            .then(response => response.json())
-            .then(json => console.log(json))
+        const response = await axios.get('https://sportagvalaszto.vasvince.com:3001/books');
 
-        // setBooks(response.data);
+        setBooks(response.data);
     }
 
     useEffect(() => {
