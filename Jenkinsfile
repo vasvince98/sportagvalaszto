@@ -17,7 +17,7 @@ pipeline {
         stage('Docker compose') {
             steps {
                 echo 'Docker compose'
-                sh 'cd /home && docker-compose up -d'
+                sh 'cd /home && sudo docker-compose up -d'
             }
         }
 
