@@ -17,8 +17,7 @@ pipeline {
         stage('Docker compose') {
             steps {
                 echo 'Docker compose'
-                sh 'cd /var/www/html'
-                sh 'docker-compose up -d'
+                sh 'cd /var/www/html && docker-compose up -d'
             }
         }
 
