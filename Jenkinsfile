@@ -10,14 +10,14 @@ pipeline {
 
         stage('Move file to apache root') {
             steps {
-                sh 'sudo cp -r /var/lib/jenkins/workspace/sportagvalasztomulti_production/* /home/vvince'
+                sh 'sudo cp -r /var/lib/jenkins/workspace/sportagvalasztomulti_production/* /home/sportagvalaszto'
             }
         }
 
         stage('Docker compose') {
             steps {
                 echo 'Docker compose'
-                sh 'cd /home/vvince && sudo docker-compose up -d'
+                sh 'cd /home/sportagvalaszto && sudo docker-compose up -d'
             }
         }
 
