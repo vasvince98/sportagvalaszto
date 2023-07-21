@@ -8,16 +8,16 @@ pipeline {
             }
         }
 
-//         stage('Move file to apache root') {
-//             steps {
-//                 sh 'sudo cp -r /var/lib/jenkins/workspace/sportagvalasztomulti_production/* /var/www/html'
-//             }
-//         }
+        stage('Move file to apache root') {
+            steps {
+                sh 'sudo cp -r /var/lib/jenkins/workspace/sportagvalasztomulti_production/* /home'
+            }
+        }
 
         stage('Docker compose') {
             steps {
                 echo 'Docker compose'
-                sh 'cd /var/lib/jenkins/workspace/sportagvalasztomulti_production && docker-compose up -d'
+                sh 'cd /home && docker-compose up -d'
             }
         }
 
