@@ -14,31 +14,45 @@ pipeline {
             }
         }
 
-        stage('Install dependencies') {
+        stage('Docker compose') {
             steps {
-                sh 'cd /var/www/html && sudo npm install'
+                echo 'Docker compose'
+                sh 'cd /var/www/html'
+                sh 'docker-compose up -d'
             }
         }
 
-        stage('Build') {
-            steps {
-                sh 'cd /var/www/html/ && sudo npm run build'
-            }
-        }
-        stage('Moving build to apache root') {
-            steps {
-                sh 'sudo cp -r /var/www/html/build/* /var/www/html/'
-            }
-        }
-        stage('Deploy') {
-            when {
-                branch 'production'
-            }
-            steps {
-                echo 'Deploying....'
-                //Starting the json server in previous screen session
-                sh 'sudo screen -dmS json-server sudo json-server --watch db.json'
-            }
-        }
+//         stage('Move file to apache root') {
+//             steps {
+//                 sh 'sudo cp -r /var/lib/jenkins/workspace/sportagvalasztomulti_production/* /var/www/html'
+//             }
+//         }
+//
+//         stage('Install dependencies') {
+//             steps {
+//                 sh 'cd /var/www/html && sudo npm install'
+//             }
+//         }
+//
+//         stage('Build') {
+//             steps {
+//                 sh 'cd /var/www/html/ && sudo npm run build'
+//             }
+//         }
+//         stage('Moving build to apache root') {
+//             steps {
+//                 sh 'sudo cp -r /var/www/html/build/* /var/www/html/'
+//             }
+//         }
+//         stage('Deploy') {
+//             when {
+//                 branch 'production'
+//             }
+//             steps {
+//                 echo 'Deploying....'
+//                 //Starting the json server in previous screen session
+//                 sh 'sudo screen -dmS json-server sudo json-server --watch db.json'
+//             }
+//         }
     }
 }
