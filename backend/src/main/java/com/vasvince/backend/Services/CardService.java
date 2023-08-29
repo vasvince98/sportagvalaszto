@@ -1,9 +1,13 @@
 package com.vasvince.backend.Services;
 
+import com.google.gson.Gson;
 import com.vasvince.backend.Entities.Card;
 import com.vasvince.backend.Repositories.ICardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class CardService {
@@ -15,8 +19,18 @@ public class CardService {
         this.cardRepository = cardRepository;
     }
 
-    public String addNewCard(String cardName) {
-        cardRepository.save(new Card(cardName, cardName));
-        return "New card added with name: " + cardName;
+    public String addNewCard(String name, String title) {
+        cardRepository.save(new Card(name, title));
+        return "New card added with name: " + title;
+    }
+
+    public String getCards() {
+        List<Card> cards = new ArrayList<Card>();
+        Iterable<Card> iterableCards = cardRepository.findAll();
+        iterableCards.forEach(cards::add);
+
+        Gson gson = new Gson();
+
+        return gson.toJson(cards);
     }
 }

@@ -2,8 +2,7 @@ package com.vasvince.backend.Controllers;
 
 import com.vasvince.backend.Services.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class TestController {
@@ -15,8 +14,9 @@ public class TestController {
         this.testService = testService;
     }
 
-    @RequestMapping("/")
-    public String test() {
-        return testService.testMethod();
+    @GetMapping("/votes/{id}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public String test(@PathVariable int id) {
+        return "{\"id\": \"" + id + "\"}";
     }
 }

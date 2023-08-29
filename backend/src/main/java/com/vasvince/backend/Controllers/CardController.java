@@ -1,8 +1,10 @@
 package com.vasvince.backend.Controllers;
 
 
+import com.vasvince.backend.RequestObjects.CardRequest;
 import com.vasvince.backend.Services.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -15,18 +17,16 @@ public class CardController {
         this.cardService = cardService;
     }
 
-    //    @GetMapping("/cards")
-//    public String getCards() {
-//        return "test";
-//    }
-
-    @PostMapping("/cards")
-    public String addCard(@RequestBody String cardName) {
-        return cardService.addNewCard(cardName);
+    @RequestMapping(value = "/cards", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:3000")
+    public String getCards() {
+        return cardService.getCards();
     }
-//
-//    @DeleteMapping("/cards")
-//    public String deleteCard() {
-//        return "test";
-//    }
+
+    @RequestMapping(value = "/cards", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @CrossOrigin(origins = "http://localhost:3000")
+    public String addCard(@RequestBody CardRequest cardRequest) {
+        return cardService.addNewCard(cardRequest.getName(), cardRequest.getTitle());
+    }
 }

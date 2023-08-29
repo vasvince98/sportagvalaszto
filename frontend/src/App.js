@@ -9,8 +9,7 @@ function App() {
     const [books, setBooks] = useState([]);
 
     const fetchBooks = async () => {
-        const response = await axios.get('https://sportagvalaszto.vasvince.com:3001/books');
-
+        const response = await axios.get('http://localhost:6788/cards');
         setBooks(response.data);
     }
 
@@ -38,7 +37,7 @@ function App() {
     };
 
     const createBook = async (title, name) => {
-        const response = await axios.post('https://sportagvalaszto.vasvince.com:3001/books', {
+        const response = await axios.post('http://localhost:6788/cards', {
             title,
             name
         });

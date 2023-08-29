@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   db:
-    platform: linux/x86_64
+    platform: linux/arm64/v8
     image: mysql
     volumes:
       - data:/var/lib/mysql
@@ -9,12 +9,18 @@ services:
       - ./env/mysql.env
     
   backend:
-    platform: linux/x86_64
+    platform: linux/arm64/v8
     build: ./backend
     depends_on:
       - db
     ports:
       - "6788:6788"
+      - "35729:35729"
+      - "5005:5005"
+    volumes:
+        - ./backend/src:/app/src
+    working_dir: /app
+    command: sh run.sh
     env_file:
       - ./env/mysql.env
     

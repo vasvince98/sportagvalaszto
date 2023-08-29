@@ -10,15 +10,15 @@ public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    private String name;
     private String title;
-    private String description;
 
     public Card() {
     }
 
-    public Card(String title, String description) {
+    public Card(String name, String title) {
+        this.name = name;
         this.title = title;
-        this.description = description;
     }
 
     public int getId() {
@@ -29,19 +29,19 @@ public class Card {
         this.id = id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }

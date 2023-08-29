@@ -12,9 +12,10 @@ function BookShow({book, onDelete, onEdit}) {
     const [imageSrc, setImageSrc] = useState('');
 
     const fetchVotes = async () => {
-        const response = await axios.get(`https://sportagvalaszto.vasvince.com:3001/votes/${book.id}`);
-        console.log(response.data);
-        setVotes(response.data.votes);
+        // const response = await axios.get(`http://localhost:6788/votes/${book.id}`);
+        // setVotes(response.data.votes);
+
+        setVotes(3);
     }
 
     useEffect(() => {
