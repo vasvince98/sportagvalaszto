@@ -1,8 +1,8 @@
-package com.vasvince.backend.Controllers;
+package com.vasvince.Controllers;
 
 
-import com.vasvince.backend.RequestObjects.CardRequest;
-import com.vasvince.backend.Services.CardService;
+import com.vasvince.requestObjects.CardRequest;
+import com.vasvince.Services.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

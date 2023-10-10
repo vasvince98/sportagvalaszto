@@ -1,4 +1,4 @@
-package com.vasvince.backend.RequestObjects;
+package com.vasvince.requestObjects;
 
 public class CardRequest {
     private String name;

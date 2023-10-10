@@ -1,4 +1,4 @@
-package com.vasvince.backend.Controllers;
+package com.vasvince.Controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 

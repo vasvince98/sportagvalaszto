@@ -1,8 +1,8 @@
-package com.vasvince.backend.Services;
+package com.vasvince.Services;
 
 import com.google.gson.Gson;
-import com.vasvince.backend.Entities.Card;
-import com.vasvince.backend.Repositories.ICardRepository;
+import com.vasvince.Entities.Card;
+import com.vasvince.Repositories.ICardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

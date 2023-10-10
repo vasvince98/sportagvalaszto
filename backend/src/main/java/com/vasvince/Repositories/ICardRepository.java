@@ -1,6 +1,6 @@
-package com.vasvince.backend.Repositories;
+package com.vasvince.Repositories;
 
-import com.vasvince.backend.Entities.Card;
+import com.vasvince.Entities.Card;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
