@@ -1,6 +1,6 @@
 package com.vasvince.Controllers;
 
-import com.vasvince.Services.TestService;
+import com.vasvince.services.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

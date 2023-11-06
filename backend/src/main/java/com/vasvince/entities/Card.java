@@ -1,4 +1,4 @@
-package com.vasvince.Entities;
+package com.vasvince.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

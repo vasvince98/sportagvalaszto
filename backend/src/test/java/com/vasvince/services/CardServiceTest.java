@@ -1,4 +1,4 @@
-package com.vasvince.Services;
+package com.vasvince.services;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -12,7 +12,6 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 @SpringBootTest
 @RunWith(SpringRunner.class)
@@ -36,7 +35,7 @@ class CardServiceTest {
     }
 
     @Test
-    public void verifyGetCards() {
+    void verifyGetCards() {
         String jsonFromMethod = cardService.getCards();
         Assertions.assertEquals(dummyJson, jsonFromMethod);
     }

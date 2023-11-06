@@ -1,4 +1,4 @@
-package com.vasvince.Services;
+package com.vasvince.services;
 
 import org.springframework.stereotype.Service;
 

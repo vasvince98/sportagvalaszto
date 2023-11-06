@@ -1,7 +1,7 @@
-package com.vasvince.Services;
+package com.vasvince.services;
 
 import com.google.gson.Gson;
-import com.vasvince.Entities.Card;
+import com.vasvince.entities.Card;
 import com.vasvince.Repositories.ICardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,7 @@ public class CardService {
     }
 
     public String getCards() {
-        List<Card> cards = new ArrayList<Card>();
+        List<Card> cards = new ArrayList<>();
         Iterable<Card> iterableCards = cardRepository.findAll();
         iterableCards.forEach(cards::add);
 

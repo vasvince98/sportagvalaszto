@@ -1,6 +1,6 @@
 package com.vasvince.Repositories;
 
-import com.vasvince.Entities.MyUser;
+import com.vasvince.entities.MyUser;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
