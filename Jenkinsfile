@@ -10,7 +10,7 @@ node {
 
   stage('SonarQube Analysis') {
     def mvn = tool 'Default Maven';
-    dir("${workspace}") {
+    dir("${workspace}/backend") {
         withSonarQubeEnv() {
               sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=vasvince98_sportagvalaszto_AYumgtTK4Z13NZoCs9RU -Dsonar.projectName='sportagvalaszto'"
             }
