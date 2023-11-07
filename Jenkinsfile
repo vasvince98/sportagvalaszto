@@ -25,7 +25,7 @@ node {
   stage('SonarQube Analysis - Frontend') {
       dir("${workspace}/frontend") {
         withSonarQubeEnv() {
-          sh "npm run build -Dsonar.projectKey=vasvince98_sportagvalaszto_frontend_AYumgtTK4Z13NZoCs9RU -Dsonar.projectName='sportagvalaszto-frontend'"
+          sh "npm run build -Dsonar.projectKey=vasvince98_sportagvalaszto_AYumgtTK4Z13NZoCs9RU -Dsonar.projectName='sportagvalaszto'"
         }
       }
   }
