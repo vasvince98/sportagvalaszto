@@ -16,6 +16,12 @@ node {
     }
   }
 
+  stage('Install dependencies - Frontend') {
+        dir("${workspace}/frontend") {
+          sh "npm install"
+        }
+    }
+
   stage('SonarQube Analysis - Frontend') {
       dir("${workspace}/frontend") {
         withSonarQubeEnv() {
