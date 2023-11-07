@@ -7,7 +7,7 @@ node {
       echo "Workspace path: ${workspace}"
     }
 
-  stage('SonarQube Analysis') {
+  stage('SonarQube Analysis - Backend') {
     def mvn = tool 'Default Maven';
     dir("${workspace}/backend") {
         withSonarQubeEnv() {
@@ -15,4 +15,11 @@ node {
             }
     }
   }
+
+  stage('SonarQube Analysis - Frontend') {
+      dir("${workspace}/frontend") {
+        withSonarQubeEnv() {
+          sh "npm run build -Dsonar.projectKey=vasvince98_sportagvalaszto_frontend_AYumgtTK4Z13NZoCs9RU -Dsonar.projectName='sportagvalaszto-frontend'"
+        }
+      }
 }
