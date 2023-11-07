@@ -22,4 +22,5 @@ node {
           sh "npm run build -Dsonar.projectKey=vasvince98_sportagvalaszto_frontend_AYumgtTK4Z13NZoCs9RU -Dsonar.projectName='sportagvalaszto-frontend'"
         }
       }
+  }
 }
