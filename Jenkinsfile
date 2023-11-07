@@ -5,7 +5,6 @@ node {
 
   stage('Print Workspace') {
       echo "Workspace path: ${workspace}"
-      sh "ls -R ${workspace}"
     }
 
   stage('SonarQube Analysis') {
