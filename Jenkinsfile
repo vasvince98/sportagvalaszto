@@ -26,8 +26,7 @@ node {
       dir("${workspace}/frontend") {
         def scannerHome = tool 'sonar_scanner';
         sh "npm run build"
-        sh "echo ${scannerHome}"
-        sh "sonar-scanner -Dsonar.projectKey=vasvince98_sportagvalaszto_AYumgtTK4Z13NZoCs9RU -Dsonar.projectName='sportagvalaszto'"
+        sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=vasvince98_sportagvalaszto_AYumgtTK4Z13NZoCs9RU -Dsonar.projectName='sportagvalaszto'"
       }
   }
 }
