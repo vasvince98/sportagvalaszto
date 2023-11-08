@@ -21,7 +21,6 @@ public class CardService {
 
     public String addNewCard(String name, String title) {
         cardRepository.save(new Card(name, title));
-        System.out.println("TEST");
         return "New card added with name: " + title;
     }
 
