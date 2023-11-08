@@ -2,7 +2,7 @@ package com.vasvince.services;
 
 import com.google.gson.Gson;
 import com.vasvince.entities.Card;
-import com.vasvince.Repositories.ICardRepository;
+import com.vasvince.repositories.ICardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

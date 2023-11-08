@@ -1,4 +1,4 @@
-package com.vasvince.Controllers;
+package com.vasvince.controllers;
 
 import com.vasvince.services.TestService;
 import org.springframework.beans.factory.annotation.Autowired;

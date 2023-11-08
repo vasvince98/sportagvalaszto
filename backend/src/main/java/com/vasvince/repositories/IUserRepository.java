@@ -1,4 +1,4 @@
-package com.vasvince.Repositories;
+package com.vasvince.repositories;
 
 import com.vasvince.entities.MyUser;
 import org.springframework.data.repository.CrudRepository;

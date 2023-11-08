@@ -25,7 +25,7 @@ node {
   stage('SonarQube Analysis - Frontend') {
       dir("${workspace}/frontend") {
         def scannerHome = tool 'sonar_scanner';
-//         sh "npm run build"
+//         sh "npm run build"           maybe later
         withSonarQubeEnv() {
             sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey='sportagvalaszto-frontend' -Dsonar.projectName='sportagvalaszto-frontend'"
         }
