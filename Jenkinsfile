@@ -25,6 +25,7 @@ node {
   stage('SonarQube Analysis - Frontend') {
       dir("${workspace}/frontend") {
         sh "npm run build"
+        echo 'HAJ'
         sh "sonar-scanner -Dsonar.projectKey=vasvince98_sportagvalaszto_AYumgtTK4Z13NZoCs9RU -Dsonar.projectName='sportagvalaszto'"
       }
   }
