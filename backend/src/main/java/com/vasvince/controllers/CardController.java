@@ -17,13 +17,13 @@ public class CardController {
         this.cardService = cardService;
     }
 
-    @RequestMapping(value = "/cards", method = RequestMethod.GET)
+    @GetMapping(value = "/cards")
     @CrossOrigin(origins = "http://localhost:3000")
     public String getCards() {
         return cardService.getCards();
     }
 
-    @RequestMapping(value = "/cards", method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE,
+    @PostMapping(value = "/cards", consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     @CrossOrigin(origins = "http://localhost:3000")
     public String addCard(@RequestBody CardRequest cardRequest) {
